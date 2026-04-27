@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mari Belajar | Premium Academy</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        :root {
+            --primary-blue: #0f2d7d;
+            --bright-blue: #2351d1;
+            --accent-yellow: #fcc100;
+            --light-gray: #f8f9fa;
+        }
+
+        body { font-family: 'Poppins', sans-serif; background-color: #ffffff; color: #333; overflow-x: hidden; }
+
+        /* --- NAVBAR --- */
+        .navbar { padding: 20px 0; z-index: 1050; transition: 0.3s; }
+        .navbar-brand { font-family: 'Montserrat', sans-serif; font-weight: 800; color: white !important; font-size: 1.6rem; }
+        .navbar-brand span { color: var(--accent-yellow); }
+        .nav-link { color: rgba(255,255,255,0.9) !important; font-weight: 500; margin: 0 15px; transition: 0.3s; }
+        .nav-link:hover { color: var(--accent-yellow) !important; }
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: #0a1941; 
+                margin-top: 15px;
+                padding: 25px;
+                border-radius: 20px;
+                box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            }
+            .nav-link { text-align: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        }
+
+        /* --- HERO --- */
+        .hero {
+            background: radial-gradient(circle at top right, #1e4bd1, #0a1941);
+            padding: 120px 0 0 0; color: white; min-height: 80vh; display: flex; align-items: center;
+        }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: var(--accent-yellow); }
+        
+        @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .hero-img-container img { max-width: 100%; animation: floating 4s ease-in-out infinite; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.4)); }
+
+        /* --- NEW BENEFIT SECTION (Replacement for Stats) --- */
+        .stats-section { padding: 60px 0; background: var(--light-gray); position: relative; z-index: 10; }
+        .stat-card { 
+            background: white; border-radius: 20px; padding: 30px 20px; text-align: center; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: 0.3s; height: 100%;
+        }
+        .stat-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
+        .stat-card i { font-size: 2.5rem; color: var(--bright-blue); display: block; margin-bottom: 15px; }
+
+        /* --- PROGRAM --- */
+        .program-section { padding: 80px 0; }
+        .program-card { border: none; border-radius: 25px; overflow: hidden; background: #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.05); transition: 0.4s; height: 100%; }
+        .program-card:hover { transform: translateY(-10px); }
+        .img-wrapper { height: 200px; overflow: hidden; position: relative; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .program-badge { position: absolute; top: 15px; left: 15px; background: var(--accent-yellow); color: #000; padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; z-index: 2; }
+
+        /* --- FORM --- */
+        .reg-section { padding: 80px 0; }
+        .reg-card { border: none; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); background: #fff; padding: 40px; }
+        .form-label { font-weight: 600; color: var(--primary-blue); }
+
+        /* --- FEATURES & BOTTOM CONTENT --- */
+        .features-section { padding: 80px 0; }
+        .feature-box { display: flex; align-items: center; margin-bottom: 25px; }
+        .feature-icon { width: 50px; height: 50px; background: rgba(35, 81, 209, 0.1); color: var(--bright-blue); display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.5rem; margin-right: 20px; }
+        .cta-glass { background: linear-gradient(135deg, #2351d1 0%, #0a1941 100%); border-radius: 40px; padding: 50px 30px; color: white; box-shadow: 0 20px 40px rgba(10, 25, 65, 0.3); }
+
+        /* --- BUTTONS --- */
+        .btn-glow {
+            background: linear-gradient(45deg, #fcc100, #ff9900);
+            color: #000 !important; font-weight: 800; padding: 15px 40px;
+            border-radius: 50px; border: none; box-shadow: 0 5px 20px rgba(252, 193, 0, 0.4);
+            transition: 0.3s; text-transform: uppercase;
+        }
+        .float-wa {
+            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+            background-color: #25d366; color: #FFF; border-radius: 50px;
+            text-align: center; font-size: 30px; z-index: 1001; display: flex; align-items: center; justify-content: center; text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg position-absolute w-100">
+        <div class="container">
+            <a class="navbar-brand" href="#">MARI<span>BELAJAR</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list text-white fs-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#program">Program</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#daftar">Daftar</a></li>
+                    <li class="nav-item w-100 mt-2 mt-lg-0">
+                        <a href="#" class="btn btn-sm btn-glow ms-lg-3 px-4 w-100">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 pb-5 animate__animated animate__fadeInLeft">
+                    <h1>Mulai Perjalanan <span>Belajarmu</span> Bersama Kami!</h1>
+                    <p class="lead opacity-75 mb-4">Kembangkan keterampilan digitalmu bersama instruktur berpengalaman. Kurikulum berbasis industri.</p>
+                    <a href="#daftar" class="btn btn-glow">Daftar Sekarang</a>
+                </div>
+                <div class="col-lg-6 hero-img-container d-none d-lg-block">
+                    <img src="org.png" alt="Siswa">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h4 class="fw-bold text-primary">MENGAPA MEMILIH KAMI?</h4>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-md-4 col-12">
+                    <div class="stat-card">
+                        <i class="bi bi-patch-check-fill"></i>
+                        <h5 class="fw-bold">Sertifikat Resmi</h5>
+                        <p class="text-muted small mb-0">Dapatkan sertifikat keahlian yang diakui untuk menunjang karir profesional Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="stat-card">
+                        <i class="bi bi-clock-history"></i>
+                        <h5 class="fw-bold">Akses Selamanya</h5>
+                        <p class="text-muted small mb-0">Sekali daftar, Anda bisa mengakses materi belajar kapan saja tanpa batas waktu.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="stat-card">
+                        <i class="bi bi-people-fill"></i>
+                        <h5 class="fw-bold">Komunitas Aktif</h5>
+                        <p class="text-muted small mb-0">Bergabung dengan grup diskusi bersama mentor dan ribuan alumni lainnya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="program-section" id="program">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Program Unggulan</h2>
+                <div class="mx-auto" style="width: 60px; height: 5px; background: var(--accent-yellow); border-radius: 10px;"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6"><div class="program-card"><div class="img-wrapper"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Office"><div class="program-badge">OFFICE</div></div><div class="p-4"><h5 class="fw-bold">Admin Office Pro</h5><p class="small text-muted">Kuasai pelaporan data, Excel Advance, dan administrasi modern.</p></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="program-card"><div class="img-wrapper"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Design"><div class="program-badge">CREATIVE</div></div><div class="p-4"><h5 class="fw-bold">Graphic Design Master</h5><p class="small text-muted">Ekspresikan kreativitasmu dengan Adobe Photoshop & Illustrator.</p></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="program-card"><div class="img-wrapper"><img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80" alt="Web Dev"><div class="program-badge">TECH</div></div><div class="p-4"><h5 class="fw-bold">Web Development</h5><p class="small text-muted">Bangun website responsif dari nol hingga online (HTML, CSS, JS).</p></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="program-card"><div class="img-wrapper"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80" alt="Desktop Dev"><div class="program-badge">SOFTWARE</div></div><div class="p-4"><h5 class="fw-bold">Desktop Developer</h5><p class="small text-muted">Pembuatan aplikasi sistem operasi Windows & Mac yang powerful.</p></div></div></div>
+                <div class="col-lg-4 col-md-6"><div class="program-card"><div class="img-wrapper"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80" alt="Photography"><div class="program-badge">VISUAL</div></div><div class="p-4"><h5 class="fw-bold">Photography Master</h5><p class="small text-muted">Kuasai teknik kamera, lighting, dan pengolahan foto digital.</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reg-section bg-light" id="daftar">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="reg-card">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold text-primary">Form Pendaftaran</h2>
+                            <p class="text-muted">Lengkapi data diri Anda di bawah ini.</p>
+                        </div>
+                        <form id="whatsappForm">
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <label class="form-label">Nama Lengkap</label>
+                                    <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Jenis Kelamin</label>
+                                    <select id="jk" class="form-select" required>
+                                        <option value="">-- Pilih --</option>
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Usia</label>
+                                    <input type="number" id="usia" class="form-control" placeholder="Contoh: 20" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Nomor WhatsApp</label>
+                                    <input type="tel" id="telp" class="form-control" placeholder="0812xxxx" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Pilih Program</label>
+                                    <select id="kelas" class="form-select" required>
+                                        <option value="">-- Pilih Kelas --</option>
+                                        <option value="Admin Office Pro">Admin Office Pro</option>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="Graphic Design Master">Graphic Design Master</option>
+                                        <option value="Desktop Developer">Desktop Developer</option>
+                                        <option value="Photography Master">Photography Master</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label">Alamat Lengkap</label>
+                                    <textarea id="alamat" class="form-control" rows="3" placeholder="Alamat Lengkap" required></textarea>
+                                </div>
+                                <div class="col-md-12 mt-4">
+                                    <button type="submit" class="btn btn-glow w-100 py-3">DAFTAR SEKARANG</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="display-6 fw-bold mb-4">Kenapa <span class="text-primary">Mari Belajar?</span></h2>
+                    <p class="text-muted mb-4">Kami adalah jembatan terbaik untuk karir digitalmu di masa depan.</p>
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="bi bi-star-fill"></i></div>
+                        <div><h5 class="fw-bold mb-1">Kurikulum Praktis</h5><p class="mb-0 text-muted small">Materi langsung praktek sesuai standar perusahaan.</p></div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="bi bi-person-workspace"></i></div>
+                        <div><h5 class="fw-bold mb-1">Mentor Pendamping</h5><p class="mb-0 text-muted small">Belajar intensif dengan dukungan mentor ahli.</p></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="cta-glass text-center">
+                        <h2 class="fw-bold mb-3">Butuh Bantuan?</h2>
+                        <p class="opacity-75 mb-4">Konsultasikan minatmu dengan admin kami secara gratis.</p>
+                        <a href="https://wa.me/6285776821436" class="btn btn-glow">Chat WhatsApp Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center border-top">
+        <p class="text-muted mb-0 small">&copy; 2026 Mari Belajar. All Rights Reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/6285776821436" class="float-wa" target="_blank"><i class="bi bi-whatsapp"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const d = new Date();
+            const noReg = `REG-${d.getDate()}${d.getMonth()+1}${d.getFullYear().toString().substr(-2)}-${d.getHours()}${d.getMinutes()}`;
+            
+            const nama = document.getElementById('nama').value;
+            const jk = document.getElementById('jk').value;
+            const usia = document.getElementById('usia').value;
+            const telp = document.getElementById('telp').value;
+            const kelas = document.getElementById('kelas').value;
+            const alamat = document.getElementById('alamat').value;
+
+            const pesan = `*PENDAFTARAN BARU*%0A` +
+                          `--------------------------------%0A` +
+                          `*No. Reg:* ${noReg}%0A` +
+                          `*Nama:* ${nama}%0A` +
+                          `*Gender:* ${jk}%0A` +
+                          `*Usia:* ${usia} Tahun%0A` +
+                          `*WA:* ${telp}%0A` +
+                          `*Kelas:* ${kelas}%0A` +
+                          `*Alamat:* ${alamat}%0A` +
+                          `--------------------------------%0A` +
+                          `Mohon segera diproses ya Admin!`;
+
+            window.open(`https://wa.me/6285776821436?text=${pesan}`, '_blank');
+        });
+    </script>
+</body>
+</html>
